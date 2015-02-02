@@ -1,0 +1,40 @@
+{{#if error}}
+<div class="row" id="error-message"><div data-alert class="alert-box alert large-12 columns">
+  {{error}}
+  <a href="#" class="close">&times;</a>
+</div></div>
+{{/if}}
+
+
+<div class="row" id="login-signup-form">
+
+  <div class="large-5 columns panel">
+    <h3>Login</h3>
+    <h3 class="subheader"><small>Login now to view your sets!</small></h2>
+      <form id="signin-form">
+        <label for="username-l">Username</label>
+        <input id="username-l" type="text" placeholder="Username" name="username">
+        <label for="password-l">Password</label>
+        <input type="password" id="password-l" placeholder="Password" name="password">
+        <input class="button expand radius small" type="submit" value="Log In"/>
+      </form>
+    </div>
+
+    <div class="large-6 columns panel">
+      <h3>Signup</h3>
+      <h3 class="subheader"><small>If you don't have an account, sign up now!</small></h3>
+      <form id="register-form">
+        <label for="username-s">Username</label>
+        <input id="username-s" type="text" placeholder="Username" name="username">
+        <label for="password-s">Password</label>
+        <input type="password" id="password-s" placeholder="Password" name="password">
+        <label for="password-confirm-s">Confirm Password</label>
+        <input type="password" id="password-confirm-s" placeholder="Confirm Password" name="confirm_password">
+        <input class="button expand radius small" type="submit" value="Sign Up"/>
+      </form>
+    </div>
+  </div>
+
+  <div id="dancer-background">
+
+  </div>

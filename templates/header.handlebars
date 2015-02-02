@@ -1,0 +1,12 @@
+<div id="nav-links">
+  <section class="top-bar-section">
+    <ul class="right">
+      {{#if isSignedIn}}
+      <li><a href="#" id="dashboard">Dashboard</a></li>
+      <li><a href="#" id='logout-link'>Logout</a></li>
+      {{else}}
+      <li><a href="#" id="login-signup">Login/Signup</a></li>
+      {{/if}}
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,58 @@
+{{#if error}}
+<div class="row" id="error-message"><div data-alert class="alert-box alert large-12 columns">
+  {{error}}
+  <a href="#" class="close">&times;</a>
+</div></div>
+{{/if}}
+
+<div class="row">
+  <h2 id="greeting">Hello {{currentUser.username}}!</h2>
+
+  <div class="large-12 columns">
+    <div id='create-set'>
+      <button class="button small radius right" id="open-modal-new-set" ata-reveal-id="modal-new-set">Add Set</button>
+    </div>
+    <h3>My Sets</h3>
+    <h3 class="subheader"><small>These are the sets that you have created.</small></h3>
+    <ul class="sets no-bullet">
+      {{#each sets}}
+      {{> setlink}}
+      {{/each}}
+    </ul>
+
+    <h3>Shared with Me</h3>
+    <h3 class="subheader"><small>These are sets that have been shared with you.</small></h3>
+    <ul class="shares no-bullet">
+      {{#each shares}}
+      {{> sharelink}}
+      {{/each}}
+    </ul>
+  </ul>
+</div>
+
+<div id="modal-new-set" class="reveal-modal" data-reveal>
+  <h1>Create a New Set</h1>
+  <form id="new-set-form">
+    <label>
+      Name:
+      <input type="text" id="new-set-name" />
+    </label>
+    <label class="display-none"><input type="text" name="index" value="0"></label>
+    <label class="display-none"><input type="text" value="{{set._id}}" name="set_id"></label>
+    <input type="submit" class="button radius small" id="add-set" value="Create Set">
+  </form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+</div>
+
+<div id="modal-share-set" class="reveal-modal" data-reveal>
+  <div id='share-wrapper' data-set-id={{id}}>
+    <h3>Share Your Set</h3>
+    <form id="share-form">
+      <label for="share-recipient">Recipient</label>
+      <input type="text" id="share-recipient" placeholder="Recipient" name="recipient">
+      <input class="button radius tiny" type="submit" value="Share"/>
+    </form>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+</div>

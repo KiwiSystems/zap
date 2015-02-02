@@ -1,0 +1,142 @@
+{{#if error}}
+<div class="row" id="error-message"><div data-alert class="alert-box alert large-12 columns">
+  {{error}}
+  <a href="#" class="close">&times;</a>
+</div></div>
+{{/if}}
+
+<div class="row">
+  <div class="large-12 columns">
+    <h2 id='set-info' data-index="0" index="{{index}}" data-setId="{{set._id}}">{{set.name}}</h2>
+    {{#if isOwner}}
+    <div class="right" id="set-toggle-container">
+      {{#if edit_mode}}
+      <div class="label secondary" id="set-toggle-view">View</div>
+      {{else}}
+      <div class="label" id="set-toggle-view">View</div>
+      {{/if}}
+      <div class="switch" id="set-toggle">
+        <input id="edit-set" type="checkbox">
+        <label for="edit-set" data-index="0" data-setId="{{set._id}}"></label>
+      </div>
+      {{#if edit_mode}}
+      <div class="label" id="set-toggle-edit">Edit</div>
+      {{else}}
+      <div class="label secondary" id="set-toggle-edit">Edit</div>
+      {{/if}}
+    </div>
+    {{!-- <a href="#" class="button small right" id="edit-set" data-index="0" data-setId="{{set._id}}">Edit</a> --}}
+    <script> $('#edit-set').prop('checked', {{edit_mode}});</script>
+    <div class="button-bar large-12 columns">
+      <div class="left">
+        <button class="button tiny" id="dashboard">Back to Dashboard</button>
+      </div>
+      <ul class="button-group radius right">
+        <li>
+          <a href="#" class="button tiny set-sub-nav-button hidden" id="new-formation">New Formation</a>
+        </li>
+        <li>
+          <a href="#" data-reveal-id="modal-new-dancer" class="button tiny set-sub-nav-button hidden" id="new-dancer">New Dancer</a>
+        </li>
+        <li>
+          <a href="#" class="button tiny set-sub-nav-button hidden" id="save-set">Save</a>
+        </li>
+        <li>
+          <button class="button right tiny radius" id="play">Play</button>
+        </li>
+      </ul>
+    </div>
+    <script>
+      if ({{edit_mode}}) {
+        $('.set-sub-nav-button').toggleClass('hidden', 200);
+        $('.delete-formation').toggleClass('hidden', 200);
+        $('.dancer-obj').each(function() {
+          $(this).toggleClass('cursor-move');
+          $(this).draggable({
+            containment: 'parent',
+            disabled: false,
+          });
+        });
+      }
+    </script>
+
+    {{else}}
+    <div class="button-bar large-12 columns">
+    <div class="left">
+        <button class="button tiny" id="dashboard">Back to Dashboard</button>
+      </div>
+      <ul class="button-group radius right">
+        <li>
+          <button class="button right tiny radius set-sub-nav-button" id="play">Play</button>
+        </li>
+      </ul>
+    </div>
+    {{/if}}
+
+    <div class="large-3 columns">
+      <div class="panel" id="formation-panel" data-max-index="{{set.dancers.0.path.length}}">
+        <h4>Formations</h4>
+        <ul class="no-bullet">
+          {{#each set.dancers.0.path}}
+          <li>
+            <a class="formation" id="formation-{{@index}}" data-index={{@index}}>Formation {{@index}}</a>
+            {{#if ../isOwner}}
+            <a class='delete-formation hidden' data-index={{@index}}> &#x2717 </a>
+            {{/if}}
+          </li>
+          {{/each}}
+        </ul>
+        <script>
+          $('.formation').removeClass('formation-active');
+          $('#formation-'+{{index}}).addClass('formation-active');
+        </script>
+      </div>
+    </div>
+
+    <div class="large-9 columns">
+      <div class="panel">
+        <div id="dancer-canvas">
+          {{#each set.dancers}}
+          <div class="dancer-obj" id="dancer-obj-{{this._id}}" data-id="{{this._id}}" data-x="{{this.path.0.x}}" data-y="{{this.path.0.y}}" title="{{this.name}}">
+          </div>
+
+          <script>
+          var name = "{{this.name}}";
+          if (name.length < 2) {
+            $('#dancer-obj-{{this._id}}').html(name);
+          } else {
+            $('#dancer-obj-{{this._id}}').html(name.substring(0,3));
+          }
+          </script>
+          <script>
+            var x; var y;
+            {{#each this.path}}
+            if ( {{@index}} === {{../../index}} ) {
+              y =  {{this.y}};
+              x = {{this.x}};
+            }
+            {{/each}}
+            $('#dancer-obj-{{this._id}}').css('top', y);
+            $('#dancer-obj-{{this._id}}').css('left', x);
+          </script>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modal-new-dancer" class="reveal-modal" data-reveal>
+      <h1>Create a New Dancer</h1>
+      <form id="new-dancer-form">
+        <label>
+          Name
+          <input type="text" name="name">
+        </label>
+        <label class="hidden"><input type="hidden" name="index" value="0"></label>
+        <label class="hidden"><input type="hidden" value="{{set._id}}" name="set_id"></label>
+        <input type="submit" class="button radius small" value="Create Dancer">
+      </form>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+#dancer-background {
+    background: url('../img/break-dancer.jpg') no-repeat 50% 50%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top:0;
+    z-index: -10;
+}
+
+.contain-to-grid, .top-bar, .top-bar-section a, #logo-link {
+    background: #772088 !important;
+    transition: 300ms ease-out
+}
+.top-bar-section a:hover, #logo-link:hover {
+    background: #41114a !important;
+    text-decoration: none !important;
+}
+.top-bar {
+    margin-bottom: 2em !important;
+}
+#logo-link {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+#error-message {
+    margin-top: -32px;
+}
+#greeting {
+    border-bottom: 1px solid gray;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 1.2em;
+}
+#set-info {
+    float: left;
+}
+.set, .share {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    margin-bottom: 0.3em;
+    overflow: hidden;
+    padding: 0.5em 1em;
+    width: 100%;
+}
+.edit-set, .shared-set {
+    font-size: 1.5em;
+}
+#set-toggle-container {
+    width: 160px;
+    position: relative;
+}
+#set-toggle {
+    width: 64px;
+    margin: 0 auto;
+}
+#set-toggle-edit, #set-toggle-view {
+    position: absolute;
+    top: 0;
+    margin-top: 6px;
+}
+#set-toggle-view {
+    left: 0;
+}
+#set-toggle-edit {
+    right: 0;
+}
+#dancer-canvas {
+    max-height: 500px;
+    min-height: 500px;
+    position: relative;
+}
+.dancer-obj {
+    background-color: #9b59b6;
+    border-radius: 100%;
+    border: 2px solid #2c3e50;
+    color: white;
+    font-family: monospace;
+    font-size: 1.7em;
+    font-weight: bolder;
+    height: 50px;
+    overflow:hidden;
+    padding-top: 7px;
+    position: absolute !important;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    word-wrap: break-word;
+}
+
+#formation-panel ul li {
+    margin: 0.8em 0;
+    position: relative;
+}
+.formation {
+    padding: 0.5em;
+}
+
+.formation-active:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #772088;
+    position: absolute;
+    left: -5px;
+    top: 6px;
+}
+.delete-formation {
+    color: red;
+    float: right;
+    vertical-align: middle;
+}
+.delete-formation:hover {
+    text-decoration: none;
+    color: #c0392b;
+}
+/** MISC **/
+
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cursor-move {
+    cursor: move;
+}
+.hidden {
+    visibility: hidden !important;
+}
+.display-none {
+    display: none;
+}
