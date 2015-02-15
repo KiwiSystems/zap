@@ -3,7 +3,7 @@
   "description": "green my restaurant",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codeforgood2015/gra"
+    "url": "https://github.com/KiwiSystems/zap"
   },
   "engines": {
     "node": ">= 0.10.30",
