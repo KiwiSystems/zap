@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0AF1D3E4-B383-4E18-BF9F-C7B4500F2A6C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HelloWorld</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>09ACFDAF8B60D5D264883E4239E9AA49D2AE5D05</key>
+		<string>github.com:KiwiSystems/zap.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>helloCordova/hello/platforms/ios/HelloWorld.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>09ACFDAF8B60D5D264883E4239E9AA49D2AE5D05</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:KiwiSystems/zap.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>09ACFDAF8B60D5D264883E4239E9AA49D2AE5D05</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>09ACFDAF8B60D5D264883E4239E9AA49D2AE5D05</string>
+			<key>IDESourceControlWCCName</key>
+			<string>zap</string>
+		</dict>
+	</array>
+</dict>
+</plist>
